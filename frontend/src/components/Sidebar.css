@@ -1,0 +1,76 @@
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.sidebar-header button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+}
+
+.sidebar a {
+  display: block;
+  margin: 14px 0;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sidebar a.active {
+  color: #8f7ac0;
+  font-weight: 700;
+}
+
+.logout-btn {
+  margin-top: 24px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.logout-btn:hover {
+  opacity: 0.95;
+}

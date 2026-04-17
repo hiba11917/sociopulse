@@ -1,0 +1,83 @@
+.assessment-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fdfcff 0%, #f7f9fc 45%, #eef7f5 100%);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.assessment-card {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 26px;
+  padding: 34px 30px;
+  box-shadow: 0 18px 45px rgba(43, 45, 66, 0.12);
+  text-align: center;
+}
+
+.assessment-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.assessment-title {
+  margin: 0;
+  font-size: 2rem;
+  color: #8f7ac0;
+  font-weight: 800;
+}
+
+.assessment-subtitle {
+  margin-top: 8px;
+  margin-bottom: 22px;
+  color: #5f6f8f;
+  font-size: 1rem;
+}
+
+.assessment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.assessment-form select {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid #d9dfe7;
+  font-size: 0.98rem;
+  color: #2b2d42;
+  outline: none;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.assessment-form select:focus {
+  border-color: #a7c7e7;
+  box-shadow: 0 0 0 3px rgba(167, 199, 231, 0.18);
+}
+
+.assessment-button {
+  margin-top: 6px;
+  border: none;
+  background: #cdb4db;
+  color: white;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.assessment-button:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}

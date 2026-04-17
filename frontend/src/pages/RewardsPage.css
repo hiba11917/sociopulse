@@ -1,0 +1,243 @@
+.rewards-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdfcff 0%, #f7f9fc 45%, #eef7f5 100%);
+  display: flex;
+}
+
+.rewards-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  box-shadow: 0 4px 20px rgba(43, 45, 66, 0.08);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.rewards-menu-button {
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #5f6f8f;
+}
+
+.rewards-topbar-logo {
+  height: 52px;
+  object-fit: contain;
+}
+
+.rewards-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rewards-profile-name {
+  font-weight: 600;
+  color: #2b2d42;
+}
+
+.rewards-profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #cdb4db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.rewards-content {
+  flex: 1;
+  padding: 112px 24px 36px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.rewards-header-card,
+.rewards-info-card,
+.rewards-stat-card,
+.badges-section-card,
+.completed-goals-card,
+.badge-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(43, 45, 66, 0.08);
+}
+
+.rewards-header-card {
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.rewards-header-card h2 {
+  margin: 0;
+  color: #8f7ac0;
+}
+
+.rewards-header-card p {
+  margin-top: 10px;
+  color: #5f6f8f;
+  line-height: 1.7;
+}
+
+.rewards-info-card {
+  padding: 24px;
+  color: #4f5d75;
+}
+
+.error-card {
+  border: 1px solid #f1d0d0;
+  background: rgba(255, 248, 248, 0.95);
+}
+
+.rewards-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.rewards-stat-card {
+  padding: 22px;
+}
+
+.rewards-stat-card h3 {
+  margin: 0 0 10px;
+  color: #5f6f8f;
+  font-size: 1rem;
+}
+
+.rewards-stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2b2d42;
+  margin-bottom: 8px;
+}
+
+.rewards-stat-card p {
+  margin: 0;
+  color: #7a8798;
+  line-height: 1.6;
+}
+
+.badges-section-card,
+.completed-goals-card {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.badges-section-card h3,
+.completed-goals-card h3 {
+  margin-top: 0;
+  color: #8f7ac0;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.badge-card {
+  padding: 22px;
+  text-align: center;
+}
+
+.badge-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f3edf8, #e8f4fb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 14px;
+}
+
+.badge-card h4 {
+  margin: 0 0 10px;
+  color: #2b2d42;
+}
+
+.badge-card p {
+  margin: 0;
+  color: #5f6f8f;
+  line-height: 1.6;
+}
+
+.completed-goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.completed-goal-item {
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.completed-goal-item h4 {
+  margin: 0 0 6px;
+  color: #2b2d42;
+}
+
+.completed-goal-item p {
+  margin: 0;
+  color: #6f7f92;
+}
+
+.completed-badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #dff5e3;
+  color: #2f7a45;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.empty-rewards-text {
+  color: #7a8798;
+}
+
+@media (max-width: 768px) {
+  .rewards-topbar {
+    padding: 0 16px;
+  }
+
+  .rewards-profile-name {
+    display: none;
+  }
+
+  .rewards-content {
+    padding: 104px 16px 28px;
+  }
+
+  .completed-goal-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
