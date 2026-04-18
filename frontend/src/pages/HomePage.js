@@ -15,6 +15,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
+import API_BASE from "../config/api";
 
 ChartJS.register(
   CategoryScale,
@@ -28,7 +29,6 @@ ChartJS.register(
   Legend
 );
 
-const API_BASE = "http://127.0.0.1:5000";
 
 function normalizeDateOnly(value) {
   if (!value) return "";

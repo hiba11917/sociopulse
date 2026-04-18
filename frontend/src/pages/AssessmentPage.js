@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AssessmentPage.css";
+import API_BASE from "../config/api";
 
 export default function AssessmentPage() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function AssessmentPage() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/assessment", {
+      const response = await fetch(`${API_BASE}/assessment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

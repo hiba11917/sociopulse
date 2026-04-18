@@ -2,8 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./GoalsPage.css";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
-
-const API_BASE = "http://127.0.0.1:5000";
+import API_BASE from "../config/api";
 
 function toNumber(value) {
   const parsed = Number(value);

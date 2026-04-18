@@ -9,7 +9,11 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-EXCEL_FILE_PATH = r"C:\Users\hibaa\Downloads\Final year Project\SocioPulse\backend\data\Social Media Wellness Application   (Responses).xlsx"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+EXCEL_FILE_PATH = os.environ.get(
+    "EXCEL_FILE_PATH",
+    os.path.join(BASE_DIR, "data", "Social Media Wellness Application   (Responses).xlsx")
+)
 
 
 # -----------------------------
@@ -17,10 +21,11 @@ EXCEL_FILE_PATH = r"C:\Users\hibaa\Downloads\Final year Project\SocioPulse\backe
 # -----------------------------
 def get_db_connection():
     return mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="11917",
-        database="sociopulse",
+        host=os.environ.get("DB_HOST", "127.0.0.1"),
+        user=os.environ.get("DB_USER", "root"),
+        password=os.environ.get("DB_PASSWORD", "11917"),
+        database=os.environ.get("DB_NAME", "sociopulse"),
+        port=int(os.environ.get("DB_PORT", "3306")),
         ssl_disabled=True,
         connection_timeout=3,
         autocommit=False
@@ -704,4 +709,4 @@ def delete_profile(user_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", "5000")), debug=False)

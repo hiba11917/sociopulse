@@ -4,8 +4,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
-
-const API_BASE = "http://127.0.0.1:5000";
+import API_BASE from "../config/api";
 
 function normalizeDateOnly(value) {
   if (!value) return "";
