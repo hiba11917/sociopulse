@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./AssessmentPage.css";
 import API_BASE from "../config/api";
 
 export default function AssessmentPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const userId = localStorage.getItem("user_id");
 
   const [formData, setFormData] = useState({
@@ -21,6 +22,13 @@ export default function AssessmentPage() {
   });
 
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (location.state?.message) {
+      setError(location.state.message);
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     setFormData({
@@ -52,6 +60,7 @@ export default function AssessmentPage() {
       }
 
       localStorage.setItem("wellbeing_result", data.wellbeing_result);
+      localStorage.setItem("assessment_completed", "true");
       navigate("/calendar");
     } catch (err) {
       setError(err.message || "Assessment failed");
