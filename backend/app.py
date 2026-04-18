@@ -26,7 +26,7 @@ def get_db_connection():
         password=os.environ.get("DB_PASSWORD", "11917"),
         database=os.environ.get("DB_NAME", "sociopulse"),
         port=int(os.environ.get("DB_PORT", "3306")),
-        ssl_disabled=True,
+        ssl_disabled=os.environ.get("DB_SSL_DISABLED", "true").lower() == "true",
         connection_timeout=3,
         autocommit=False
     )
