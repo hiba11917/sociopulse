@@ -38,58 +38,6 @@ function formatDateForDisplay(dateValue) {
   });
 }
 
-function calculatePreviewWellbeing({
-  mood,
-  sleep_quality,
-  before_bed,
-  anxiety_level,
-  overwhelm_level,
-}) {
-  let strainScore = 0;
-
-  const moodValue = Number(mood);
-  const sleepValue = Number(sleep_quality);
-  const beforeBedValue = String(before_bed || "").trim().toLowerCase();
-
-  if (moodValue <= 2) {
-    strainScore += 3;
-  } else if (moodValue === 3) {
-    strainScore += 1;
-  }
-
-  if (sleepValue <= 2) {
-    strainScore += 3;
-  } else if (sleepValue === 3) {
-    strainScore += 1;
-  }
-
-  if (beforeBedValue === "yes") {
-    strainScore += 1;
-  }
-
-  if (anxiety_level !== "" && anxiety_level !== null && anxiety_level !== undefined) {
-    const anxiety = Number(anxiety_level);
-    if (anxiety >= 4) {
-      strainScore += 2;
-    } else if (anxiety === 3) {
-      strainScore += 1;
-    }
-  }
-
-  if (overwhelm_level !== "" && overwhelm_level !== null && overwhelm_level !== undefined) {
-    const overwhelm = Number(overwhelm_level);
-    if (overwhelm >= 4) {
-      strainScore += 2;
-    } else if (overwhelm === 3) {
-      strainScore += 1;
-    }
-  }
-
-  if (strainScore >= 6) return "Poor";
-  if (strainScore >= 3) return "Moderate";
-  return "Good";
-}
-
 export default function CalendarPage() {
   const [date, setDate] = useState(new Date());
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -145,14 +93,6 @@ export default function CalendarPage() {
   const selectedCheckin = useMemo(() => {
     return checkins.find((item) => item.checkin_date === selectedDateIso) || null;
   }, [checkins, selectedDateIso]);
-
-  const previewWellbeing = useMemo(() => {
-    if (!formData.mood || !formData.sleep_quality || !formData.before_bed) {
-      return null;
-    }
-
-    return calculatePreviewWellbeing(formData);
-  }, [formData]);
 
   useEffect(() => {
     if (selectedCheckin) {
